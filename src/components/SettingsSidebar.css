@@ -1,0 +1,400 @@
+.settings-sidebar {
+  position: fixed;
+  top: 0;
+  left: -400px;
+  width: 400px;
+  height: 100vh;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.settings-sidebar.open {
+  left: 0;
+  position: fixed;
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  border-bottom: 1px solid #eee;
+  background: #f8f9fa;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.settings-header h2 {
+  margin: 0;
+  color: #2d3748;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background: #edf2f7;
+  color: #333;
+}
+
+.settings-form {
+  padding: 24px;
+}
+
+.settings-section {
+  margin-bottom: 32px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.settings-section:last-child {
+  margin-bottom: 16px;
+}
+
+.settings-section h3 {
+  color: #2d3748;
+  margin: 0 0 20px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #edf2f7;
+}
+
+/* Bank Section */
+.bank-section {
+  background: #f7fafc;
+}
+
+.bank-section .bank-connection-status {
+  padding: 4px 0;
+}
+
+/* Income Section */
+.income-section .income-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.income-section .income-item:last-child {
+  margin-bottom: 0;
+}
+
+.income-section .income-item label {
+  font-size: 0.85rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.income-section .input-with-prefix {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.income-section .settings-input {
+  width: 100%;
+}
+
+/* Expenses Section */
+.expenses-section {
+  background: #fff;
+}
+
+.expenses-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.expense-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.expense-item label {
+  font-size: 0.85rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.expense-item .input-with-prefix {
+  margin-bottom: 0;
+}
+
+.expense-item .settings-input {
+  padding: 8px 16px;
+  padding-left: 32px;
+  font-size: 0.9rem;
+}
+
+.expense-item .prefix {
+  font-size: 0.9rem;
+}
+
+/* Goals Section */
+.goals-section {
+  background: #fff;
+}
+
+.goals-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.goal-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.goal-item label {
+  font-size: 0.9rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.time-frame-input {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12px;
+}
+
+.time-value,
+.time-unit {
+  margin-bottom: 0;
+}
+
+/* Input Styles */
+.settings-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  margin-bottom: 16px;
+  background: #fff;
+  color: #2d3748;
+}
+
+.settings-input:last-child {
+  margin-bottom: 0;
+}
+
+.settings-input:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.settings-input::placeholder {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+/* Input with Prefix */
+.input-with-prefix {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.input-with-prefix:last-child {
+  margin-bottom: 0;
+}
+
+.prefix {
+  position: absolute;
+  left: 16px;
+  color: #4a5568;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.input-with-prefix .settings-input {
+  padding-left: 32px;
+  margin-bottom: 0;
+}
+
+/* Total Expenses */
+.total-expenses {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid #edf2f7;
+}
+
+.total-expenses span {
+  font-size: 0.85rem;
+  color: #4a5568;
+  font-weight: 600;
+}
+
+.total-expenses .amount {
+  padding: 8px 16px;
+  font-size: 1rem;
+  padding-left: 32px;
+}
+
+.total-expenses .amount:before {
+  font-size: 0.9rem;
+}
+
+/* Bank Connection Status */
+.bank-connection-status {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cbd5e0;
+  transition: .3s;
+  border-radius: 28px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: #48bb78;
+}
+
+input:disabled + .toggle-slider {
+  background-color: #e2e8f0;
+  cursor: not-allowed;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(24px);
+}
+
+.connection-text {
+  color: #4a5568;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Save Button */
+.save-settings-button {
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  transition: all 0.2s ease;
+  margin-top: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.save-settings-button:hover {
+  background-color: #3182ce;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.save-settings-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .settings-sidebar {
+    width: 100%;
+    left: -100%;
+  }
+
+  .settings-sidebar.open {
+    left: 0;
+    width: 100%;
+  }
+
+  .settings-header {
+    padding: 20px;
+  }
+
+  .settings-form {
+    padding: 20px;
+  }
+
+  .settings-section {
+    padding: 20px;
+  }
+
+  .expenses-grid,
+  .goals-grid {
+    gap: 16px;
+  }
+
+  .time-frame-input {
+    grid-template-columns: 1fr;
+  }
+
+  .time-value,
+  .time-unit {
+    width: 100%;
+  }
+} 
